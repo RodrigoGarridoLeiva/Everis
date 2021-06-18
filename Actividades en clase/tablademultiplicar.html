@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  
+  <title>Tabla de multiplicar</title>
+</head>
+<style>
+
+
+
+</style>
+
+<body>
+<u><h2>Tabla de multiplicar</h2></u>
+
+
+    <form name="form" action="" method="get" >
+        <br>
+        <div class="form-group" class="col-sm-12">
+            <label for="n1">Ingrese numero</label>
+            <input type="number" class="form-control" name="n1" placeholder="Ingrese para generar tabla" min="0">
+        </div>
+    </form>
+    <br>
+    <button type="button" class="btn btn-info" onclick="insert()">Generar</button>
+    <br>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Valor</th>
+            <th scope="col">Iteración</th>
+            <th scope="col">Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><p id="resultado"></p></th>
+            <td><p id="iteracion"></p></td>
+            <td><p id="valor"></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+</body>
+</html>
+<script>
+
+    var n1 = null;
+    var aux = 0;
+    var res = 0;
+
+
+function insert(){
+
+    n1 = document.getElementsByName("n1")[0].value;
+    aux;
+    res = 0;
+
+
+    if(parseFloat(n1)>=0){
+
+        
+        for(aux=0 ; aux<=20; aux++){
+
+            res = (parseFloat(n1)*parseFloat(aux));
+            
+        }
+
+        document.getElementById("resultado").innerHTML = res; 
+        document.getElementById("iteracion").innerHTML = aux;
+        document.getElementById("valor").innerHTML = n1;
+
+
+    }else{
+
+        alert(" Porfavor ingrese un valor mayor a 0 ");
+    }
+
+}
+
+
+
+
+
+</script>
