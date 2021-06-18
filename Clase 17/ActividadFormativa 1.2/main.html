@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  
+  <title>Promedio</title>
+  <script src="funciones.js"></script>
+</head>
+<style>
+
+.btn{
+
+  height: 100px;
+  width: 300px;
+
+}
+
+</style>
+
+<body>
+<u><h2>Calculo de notas parciales</h2></u>
+
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/185/914/378/hexagon-white-abstract-3d-abstract-hd-wallpaper-preview.jpg');
+    height: 100vh;
+  ">
+
+<div class="container">
+    <form name="form" action="" method="get" >
+        <br>
+        <div class="form-group" class="col-sm-12">
+            <label for="n1">Nota Solemne 1</label>
+            <input type="number" class="form-control" name="n1" placeholder="Ingrese nota" min="1" max="7">
+        </div>
+
+        <div class="form-group">
+            <label for="n2">Nota Solemne 2</label>
+            <input type="number" class="form-control" name="n2" placeholder="Ingrese nota" min="1" max="7">
+        </div>
+
+        <div class="form-group">
+            <label for="n3">Nota Solemne 3</label>
+            <input type="number" class="form-control" name="n3" placeholder="Ingrese nota" min="1" max="7">
+        </div>
+
+        <div class="form-group">
+            <label for="n4">Nota Solemne 4</label>
+            <input type="number" class="form-control" name="n4" placeholder="Ingrese nota" min="1" max="7">
+        </div>
+
+        <div class="form-group">
+            <label for="ex">Nota Examen Final</label>
+            <input type="number" class="form-control" name="ex" placeholder="Ingrese nota" min="1" max="7">
+        </div>
+        
+    </form>
+
+    <br>
+    <button type="button" class="btn btn-dark" onclick="calcular()">Calcular</button>
+  </div>
+    <br>
+    <br>
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Promedio</th>
+            <th scope="col">Status</th>
+            <th scope="col">Parcial</th>
+            <th scope="col">Nota 1</th>
+            <th scope="col">Nota 2</th>
+            <th scope="col">Nota 3</th>
+            <th scope="col">Nota 4</th>
+            <th scope="col">Examen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><p id="prom"></p></th>
+            <td><p id="status"></p></td>
+            <td><p id="parcial"></p></td>
+            <td><p id="nota1"></p></td>
+            <td><p id="nota2"></p></td>
+            <td><p id="nota3"></p></td>
+            <td><p id="nota4"></p></td>
+            <td><p id="exa"></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+</body>
+</html>
+
+<!--
+
+<script>
+
+    var n1 = null;
+    var n2 = null;
+    var n3 = null;
+    var n4 = null;
+    var ex = null;
+    var total = null;
+    var parcial = null;
+
+
+function calcular(){
+
+    n1 = document.getElementsByName("n1")[0].value;
+    n2 = document.getElementsByName("n2")[0].value;
+    n3 = document.getElementsByName("n3")[0].value;
+    n4 = document.getElementsByName("n4")[0].value;
+    ex = document.getElementsByName("ex")[0].value;
+
+
+    total = (parseFloat(n1)+parseFloat(n2)+parseFloat(n3)+parseFloat(n4))/4;
+    parcial = total;
+    total = (parseFloat(total)*0.6) + (parseFloat(ex)*0.4);
+
+    if(parseFloat(n1)>=1 && parseFloat(n1)<=7 && parseFloat(n2)>=1 && parseFloat(n2)<=7 && parseFloat(n3)>=1 && parseFloat(n3)<=7 && parseFloat(n4)>=1 && parseFloat(n4)<=7 && parseFloat(ex)>=1 && parseFloat(ex)<=7 ){
+
+        document.getElementById("prom").innerHTML = total;
+        document.getElementById("nota1").innerHTML = n1;
+        document.getElementById("nota2").innerHTML = n2;
+        document.getElementById("nota3").innerHTML = n3;
+        document.getElementById("nota4").innerHTML = n4;
+        document.getElementById("exa").innerHTML = ex;
+        document.getElementById("parcial").innerHTML = parcial;
+        
+
+        if((parseFloat(total))>=4){
+
+          if((parseFloat(parcial))>=4){
+            
+            alert("El promedio es: "+total+" ESTAS APROBADO!!!");
+            document.getElementById("status").innerHTML = "Aprobado";
+
+          }else{
+            alert("Tus notas parciales no fueron suficientes: "+parcial+" ESTAS REPROBADO!!!");
+            document.getElementById("status").innerHTML = "Reprobado";
+          }
+
+        }else{
+            alert("El promedio es: "+total+" ESTAS REPROBADO :c");
+            document.getElementById("status").innerHTML = "Reprobado";
+        }
+
+        
+
+    }else{
+
+        alert(" Porfavor ingrese valores correctos dentro del rango 1-7 ");
+    }
+
+    
+}
+
+
+</script>
+
+--> 
