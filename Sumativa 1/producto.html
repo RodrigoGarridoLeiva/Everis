@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styleform.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="valproduct.js"></script>
+  <title>Registro de producto</title>
+</head>
+
+<body class="w3-white">
+
+  <div class="w3-padding-64 w3-content w3-text-grey col-md-4" style="align-self: center;">
+    <h1 class="w3-text-ocean" style="color: white;">Registro de Producto</h1>
+
+    <div class="container">
+
+    <form action="main.html" style="align-self: center;">
+      
+        <!--Nombre Input-->
+        <p><input id="nombre" class="w3-input w3-padding-10 w3-hover-gray" type="text" placeholder="Ingrese Nombre" onkeyup="validar()"></p>
+        <p id="errorNombre" style="color: green">***</p>
+
+        <!--Categoria Input-->
+        <p><input id="categoria" class="w3-input w3-padding-10 w3-hover-gray" type="text" placeholder="Ingrese Categoria" onkeyup="validar()"></p>
+        <p id="errorCategoria" style="color: green">***</p>
+        
+        <!--Float Input-->
+        <p><input id="float" class="w3-input w3-padding-10 w3-hover-gray" type="number" placeholder="Ingrese Float" onkeyup="validar()"></p>
+        <p id="errorFloat" style="color: green">***</p>
+
+        <!--Precio Input-->
+        <p><input id="precio" class="w3-input w3-padding-10 w3-hover-gray" type="number" placeholder="Ingrese Precio" onkeyup="validar()"></p>
+        <p id="errorPrecio" style="color: green">***</p>
+
+        <input type="button" class="w3-button w3-light-grey w3-padding-large w3-hover-green" id="botonvalidar" value="Registrar" onclick="validar(); validarTodos();">
+
+        <input type="reset" class="w3-button w3-light-grey w3-padding-large w3-hover-yellow" id="botonlimpiar" value="Limpiar">
+    
+        <a href="main.html" class="w3-button w3-light-grey w3-padding-large w3-hover-red"> Volver</a>
+          
+     
+        <p style="color: green" id="mensajefinal">***</p>
+
+    </form>
+    
+  </div>
+
+</body>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+<div id="EndPage"  class="banner w3-center">
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4" style="background-color:white;">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color:white;">
+        © 2020 Copyright:
+        <a class="text-white" href="#">Everis</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+</div>
+
+</html>

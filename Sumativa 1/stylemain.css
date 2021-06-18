@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding:0;
+
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url('log.png');
+    
+   color: white; 
+   height: 100vh;
+            -webkit-background-size:cover;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+}
+
+.main-container-sub-content{
+    width: 100%;
+    height: auto;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.main-container-sub-content image{
+    height: 200px;
+    width: 200px;
+}
+
+
+.container-content{
+    margin: 20px;
+}
+
+
+.left-arrow {
+    position:absolute;
+    left:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+    color: black;
+}
+
+
+.left-arrow i{
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+ 
+.right-arrow {
+    position:absolute;
+    right:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+    color: black;
+}
+
+
+
+
+.image2{
+
+    display: none;
+
+}
+
+.image3{
+
+
+    display: none;
+
+}
+
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }

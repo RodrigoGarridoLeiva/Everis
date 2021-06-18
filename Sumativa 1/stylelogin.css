@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding:0;
+
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url('log.png');
+    
+   color: white; 
+   height: 100vh;
+            -webkit-background-size:cover;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+}
+div{
+  background-color: grey;
+}
+
