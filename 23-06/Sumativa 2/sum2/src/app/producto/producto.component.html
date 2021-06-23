@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <title>Home | Pizzas</title>
+  </head>
+  <body>
+
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                <a class="nav-link" href="main.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="registro.html">Registro Usuario</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="producto.html">Registro Producto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-danger" href="login.html">LogOut</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div  class="container">
+        <h1 >Bienvenido a la tienda de relojes #1 de Chile</h1>
+
+         <!-- Formulario Ingresar Producto -->
+
+        
+
+         <div class="container">
+
+            <h1>Agregar Producto</h1>
+            <form [formGroup]="formulario" (ngSubmit)="enviar()">
+
+                <div class="row">
+                    <div class="col">
+                         <input type="text" class="form-control" placeholder="Código Producto"  formControlName="codigo">
+                    </div>
+                    <div class="col">
+                         <input type="text" class="form-control" placeholder="Nombre Producto" formControlName="nombre">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                         <input type="text" class="form-control" placeholder="Precio Producto"  formControlName="precio">
+                    </div>
+                    <div class="col">
+                         <input type="text" class="form-control" placeholder="Descripción Producto" formControlName="descripcion">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                         <input type="text" class="form-control" placeholder="Stock del Producto"  formControlName="stock">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-dark" type="submit">Enviar</button>
+
+                   </div>
+                </div><br> 
+            </form>
+
+        </div>
+
+        <!--
+
+            Tabla de carrito de compras
+
+        -->
+
+        <div class="contanier">
+
+            <table class="table table-striped table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <tr>
+
+                    <th scope="row"> Resumen Compra </th>
+                    <td> Total a Pagar: {{iva}} , IVA incluido</td>
+                    <td>  </td>
+                    <td></td>
+
+                  </tr>  
+                
+                  <tr *ngFor="let datos of venta">
+                      
+                    <th *ngIf="datos.codigo!=null" scope="row"> {{datos.codigo}} </th>
+                    <td *ngIf="datos.codigo!=null"> {{datos.nombre}} </td>
+                    <td *ngIf="datos.codigo!=null"> {{datos.precio}} </td>
+                    <td *ngIf="datos.codigo!=null"> <a class="btn btn-danger" (click)="eliminarproduct(datos.id)"> Eliminar </a></td>
+                      
+                  </tr>
+                </tbody>
+              </table>
+
+
+        </div>
+
+
+        <!-- Fin carrito de compras -->
+
+
+        <div class="container">
+            <br>
+
+            <!-- Tarjetas -->
+        
+            <div class="main-container-sub-content">
+                
+            <div *ngFor="let datos of array">
+                <div *ngIf="datos.codigo!=null">
+                <div class="container-content">
+                    <div class="card"  style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title" style="color: black;">#{{datos.codigo}} (CI: {{datos.numero}} ) </h5>
+                          <p class="card-text" style="color: black;"> {{datos.nombre}} </p>
+                          <p class="card-text" style="color: black;">Precio: ${{datos.precio}} </p>
+                          <p class="card-text" style="color: black;">Stock: {{datos.stock}}</p>
+                          <h6 class="card-text" style="color: black;"> {{datos.descripcion}} </h6>
+                          <select id="val" name="val">
+                            <option value="#">1</option>
+                          </select><br><br>
+                          <a href="#" class="btn btn-secondary" (click)="agregar(datos.numero,datos.codigo,datos.precio,datos.nombre)">Agregar</a>
+                          <a class="btn btn-danger" (click)="delete(datos.numero)"> Eliminar </a><br>
+                          
+                        </div>
+                    </div> 
+                </div>
+                </div>
+            </div>
+
+                
+                
+            </div>
+        
+            <!--Fin tarjetas -->
+
+        </div>  
+        
+       
+
+
+    </div>
+    <br><br>
+
+             <!-- Formulario Ingresar Producto -->
+
+        
+
+             <div class="container">
+
+                <h1>Editar Producto</h1>
+                <form [formGroup]="formulario" (ngSubmit)="editar()">
+    
+                    <div class="row">
+                        <div class="col">
+                             <input type="text" class="form-control" placeholder="Código Interno Producto"  formControlName="codigo">
+                        </div>
+                        <div class="col">
+                             <input type="text" class="form-control" placeholder="Nombre Producto" formControlName="nombre">
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col">
+                             <input type="text" class="form-control" placeholder="Precio Producto"  formControlName="precio">
+                        </div>
+                        <div class="col">
+                             <input type="text" class="form-control" placeholder="Descripción Producto" formControlName="descripcion">
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col">
+                             <input type="text" class="form-control" placeholder="Stock del Producto"  formControlName="stock">
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-warning" type="submit">Editar {{aux}}</button>
+    
+                       </div>
+                    </div><br> 
+                </form>
+    
+            </div>
+    
+            <footer>
+                <p style="color: white;" >Everis Footer...<br>
+                    <div>
+                        <span class=”iconos-footer”>
+                        
+                        <span style="color: white;" class=”esati-pie-texto”>Síguenos: </span>
+                        </span>
+                        
+                        </div>
+              </footer>
+
+
+  </body>
+
+
+
+  
+</html>
