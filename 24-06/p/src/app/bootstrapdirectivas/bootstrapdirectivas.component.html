@@ -1,0 +1,34 @@
+<p>bootstrapdirectivas works!</p>
+
+<h4>Directiva NgFor</h4>
+<br>
+<ul>
+
+    <li *ngFor="let persona of gente" class="text-primary" >
+
+        {{persona.nombre}}
+
+    </li>
+
+
+</ul>
+
+<br>
+<hr>
+
+<ul *ngFor="let grupo of gentePorCiudad" class="text-primary" >
+
+    <li>
+
+        {{grupo.Ciudad}}
+
+    </li>
+    <ul *ngFor="let p of grupo.gente" class="text-primary" >
+
+        <li>{{p.nombre}}</li>
+
+    </ul>
+
+
+</ul>
+

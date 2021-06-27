@@ -1,0 +1,26 @@
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+
+<body>
+
+<div class="container-fluid bg">
+    <br><br><br><br><br><br><br><br><br>
+    <div class="login-block" >
+        <h1>Login</h1>
+                <div class="form-group">
+                    <label for="exampleInputUser">Usuario</label>
+                    <input type="text" class="form-control" [formControl]="user" placeholder="Username" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword">Contraseña</label>
+                    <input type="password" class="form-control" [formControl]="pwd" placeholder="Contraseña" id="password">
+                </div>
+                <br>
+                <button type="submit" (click)=validar() class="btn">Iniciar sesión</button><br><hr>
+        <h4> {{alertUser}} </h4>
+    </div>
+
+
+
+</div>
+</body>

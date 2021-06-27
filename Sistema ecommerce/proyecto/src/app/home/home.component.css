@@ -1,0 +1,27 @@
+.texto-encima{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.centerimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+h1 {
+    text-align: center;
+    color: white;
+  }
+
+h2 {
+    
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+
+  }

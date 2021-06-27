@@ -1,0 +1,109 @@
+<app-base></app-base>
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Lista de Productos</h1>
+    </div>
+    
+    <div class="container">
+      <form class="example" >
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit" class="btn btn-dark">Search</button> <app-carro></app-carro>
+      </form> 
+      
+      <br>
+      
+      <hr>
+    </div>
+
+    <!--
+      APARTADO PAGINACION
+    -->
+
+
+    <div class=" container col-xxl" style="margin-left: 90px;margin-top:30px;">
+      
+      <div class="row ">
+        
+              <div class="col-md-4" *ngFor="let p of producto | paginate: {itemsPerPage: 3, currentPage: page} " style="margin-bottom: 20px;">
+                
+                  <div class="card" style="background-color: lightgray; width: 300px; height: 400px; margin-top: 4em;">
+                    
+                      <div class="card-body">
+                          
+                              <img class="card-img-top fluid"  src="{{p.img}}"  alt="Card image cap">
+                              <h4 class="card-title">{{ p.nombre }}</h4>
+                              <b><h6 class="card-text" style="color: black;"> {{p.precio| currency : 'CLP'}}</h6></b>
+                              <p class="card-text"> Stock: {{p.stock}} Unidades.</p>
+                              <span><input type="submit" class="btn btn-outline-dark" style="position: absolute;right:1;bottom:0;" value="Agregar" (click) =  "AgregarProducto(p)"></span>
+                      </div>
+                  </div>
+              </div>
+              
+      </div>
+      <pagination-controls (pageChange) = "page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+  </div>
+
+
+  <!--
+
+
+        
+ <div class="main-container-sub-content">
+                
+  <div *ngFor="let datos of array">
+      <div *ngIf="datos.codigo!=null">
+      <div class="container-content">
+          <div class="card"  style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="color: black;">#{{datos.codigo}} (CI: {{datos.numero}} ) </h5>
+                <p class="card-text" style="color: black;"> {{datos.nombre}} </p>
+                <p class="card-text" style="color: black;">Precio: ${{datos.precio}} </p>
+                <p class="card-text" style="color: black;">Stock: {{datos.stock}}</p>
+                <h6 class="card-text" style="color: black;"> {{datos.descripcion}} </h6>
+                <select id="val" name="val">
+                  <option value="#">1</option>
+                </select><br><br>
+                <a href="#" class="btn btn-secondary" (click)="agregar(datos.numero,datos.codigo,datos.precio,datos.nombre)">Agregar</a>
+                <a class="btn btn-danger" (click)="delete(datos.numero)"> Eliminar </a><br>
+                
+              </div>
+          </div> 
+      </div>
+      </div>
+  </div>
+
+      
+      
+  </div>
+
+
+
+
+  -->
+
+
+
+    <!--FIN PAGINACION -->
+
+  </body>
+
+ <app-footer></app-footer>
+
+</html>
+
+
+
