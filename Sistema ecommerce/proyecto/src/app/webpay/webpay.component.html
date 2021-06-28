@@ -1,0 +1,37 @@
+<app-base></app-base>
+
+<div class="container">
+
+    <div class="card mt-50 mb-50">
+        <div class="card-title mx-auto"> Payment Method </div>
+        <div class="nav">
+            <ul class="mx-auto">
+                <li class="active"><a href="/webpay">WebPay</a></li>
+                <li ><a href="/pago">Visa</a></li>
+            </ul>
+        </div>
+        <form> <span id="card-header"><i class="fa fa-university" aria-hidden="true"></i> Seleccione su banco</span>
+            
+            <div class="row row-1">
+                <select class="form-control" formControlName="pais" name="pais">
+                    <option value="AF" >Banco Estado</option>
+                    <option value="AF" >Banco Santander</option>
+                    <option value="AF" >Banco Itau</option>
+                    <option value="AF" >Banco BBVA</option>
+                </select>
+            </div>
+            
+            <div class="row row-1">
+                <h6>Sera redireccionado a la página de su banco...</h6>
+            </div> 
+            
+        <button class="btn d-flex mx-auto"><b>Pagar</b></button>
+            
+            <br>
+           
+        </form>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

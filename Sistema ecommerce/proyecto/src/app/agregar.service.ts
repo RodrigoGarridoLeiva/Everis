@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class AgregarService {
 
   Productos: any[] = [];
+  n:number = 0;
 
   //Devuelve la lista completa
   Devolver(){
@@ -16,6 +17,19 @@ export class AgregarService {
     Agregar(p : any){
        this.Productos.push(p);
   }
+
+  Cant(){
+
+    this.Productos.forEach(element => {
+
+      this.n++;
+      
+    });
+
+    return this.n;
+  }
+
+
 
 
 }

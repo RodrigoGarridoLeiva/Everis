@@ -4,7 +4,10 @@ import { AppComponent } from './app.component';
 import { CarroComponent } from './carro/carro.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { PagoComponent } from './pago/pago.component';
 import { ProductosComponent } from './productos/productos.component';
+import { WebpayComponent } from './webpay/webpay.component';
 
 const routes: Routes = [
 
@@ -25,6 +28,18 @@ const routes: Routes = [
   {
     path:'productos',
     component:ProductosComponent
+  },
+  {
+    path:'about',
+    component:NosotrosComponent
+  },
+  {
+    path:'pago',
+    component:PagoComponent
+  },
+  {
+    path:'webpay',
+    component:WebpayComponent
   },
 
 ];

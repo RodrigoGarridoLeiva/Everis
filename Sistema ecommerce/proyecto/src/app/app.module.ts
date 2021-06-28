@@ -11,6 +11,10 @@ import { BaseComponent } from './base/base.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { FooterComponent } from './footer/footer.component';
 import { CarroComponent } from './carro/carro.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { FormularioComponent } from './formulario/formulario.component';
+import { PagoComponent } from './pago/pago.component';
+import { WebpayComponent } from './webpay/webpay.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { CarroComponent } from './carro/carro.component';
     LoginComponent,
     BaseComponent,
     FooterComponent,
-    CarroComponent
+    CarroComponent,
+    NosotrosComponent,
+    FormularioComponent,
+    PagoComponent,
+    WebpayComponent
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,8 @@ export class ProductoService {
         precio: 349990,
         stock: 20,
         img:"./assets/1.jpg",
-        carro: 1
+        carro: 1,
+        tags : "samsung"
       },
       {
         codigo: 101, 
@@ -26,7 +27,8 @@ export class ProductoService {
         precio: 599990,
         stock: 20,
         img:"./assets/2.jpg",
-        carro: 1
+        carro: 1,
+        tags : "iphone"
       },
       {
         codigo: 102, 
@@ -35,7 +37,8 @@ export class ProductoService {
         precio: 239900,
         stock: 20,
         img:"./assets/3.jpg",
-        carro: 1
+        carro: 1,
+        tags : "xiaomi"
       },
       {
         codigo: 103, 
@@ -44,7 +47,8 @@ export class ProductoService {
         precio: 179990,
         stock: 12,
         img:"./assets/4.jpg",
-        carro: 1
+        carro: 1,
+        tags : "huawei"
       },
       {
         codigo: 104, 
@@ -53,7 +57,8 @@ export class ProductoService {
         precio: 399990,
         stock: 32,
         img:"./assets/5.jpg",
-        carro: 1
+        carro: 1,
+        tags : "samsung"
       },
       {
         codigo: 105, 
@@ -62,7 +67,8 @@ export class ProductoService {
         precio: 389990,
         stock: 44,
         img:"./assets/6.jpg",
-        carro: 1
+        carro: 1,
+        tags : "apple"
       },
       {
         codigo: 106, 
@@ -71,7 +77,8 @@ export class ProductoService {
         precio: 249990,
         stock: 10,
         img:"./assets/7.jpg",
-        carro: 1
+        carro: 1,
+        tags : "xiaomi"
       },
       {
         codigo: 107, 
@@ -80,7 +87,8 @@ export class ProductoService {
         precio: 119990,
         stock: 5,
         img:"./assets/8.jpg",
-        carro: 1
+        carro: 1,
+        tags : "motorola"
       },
 
 
