@@ -27,32 +27,35 @@
             </div> 
             
         <button class="btn d-flex mx-auto"><b>Pagar</b></button>
+
+        </form>
         
             
             <br>
             <span id="card-header">Usar nueva tarjeta:</span>
 
+            <form>
             <div class="row-1">
                 <div class="row row-2"> <span >Card holder name</span> </div>
-                <div class="row row-2"> <input type="text" id="cardname" placeholder="Nombre Titular" onkeyup="validar()"> </div>
+                <div class="row row-2"> <input type="text" id="cardname" placeholder="Nombre Titular" pattern="[A-Za-z, ]{2,}" onkeyup="validar()"> </div>
             </div>
             <p id="errorNombre">***</p>
             <div class="row three">
                 <div class="col-7">
                     <div class="row-1">
                         <div class="row row-2"> <span >Card number</span> </div>
-                        <div class="row row-2"> <input type="text" id="cardnumber" placeholder="xxxx-xxxx-xxxx-xxxx" onkeyup="validar()"> </div>                        
+                        <div class="row row-2"> <input type="number" id="cardnumber" pattern="[0-9]{16}" min="16" max="16" placeholder="xxxx-xxxx-xxxx-xxxx" onkeyup="validar()"> </div>                        
                     </div>
                     <p id="errorNumero">***</p>
                 </div>
-                <div class="col-2"> <input type="text" id="cardxx" placeholder="xx/xx" onkeyup="validar()"> <p id="errorXX" >***</p> </div>
+                <div class="col-2"> <input type="number" id="cardxx" min="4" max="4" placeholder="xx/xx" pattern="[0-9]{4}" onkeyup="validar()"> <p id="errorXX" >***</p> </div>
                 
-                <div class="col-3"> <input type="text" id="cardcvv" placeholder="CVV" onkeyup="validar()"> </div>
+                <div class="col-3"> <input type="number" min="3" max="3" id="cardcvv" placeholder="CVV" pattern="[0-9]{3}"  onkeyup="validar()"> </div>
                 <p id="errorCvv">***</p>
                 
             </div> 
-            <button class="btn d-flex mx-auto"><b>Pagar</b></button>
-            <button class="btn d-flex mx-auto"><b>Guardar y Pagar</b></button>
+            <button class="btn d-flex mx-auto" type="submit"><b>Pagar</b></button>
+            <button class="btn d-flex mx-auto" type="submit"><b>Guardar y Pagar</b></button>
             
         </form>
     </div>
@@ -66,60 +69,61 @@
 
 
 
-//Definiendo un arreglo nombre de errores
-var arreglo = new Array();
-arreglo[0]="errorNombre";
-arreglo[1]="errorNumero";
-arreglo[2]="errorXX";
-arreglo[3]="errorCvv";
-
-
-function validar(){
-    var entrada = new Array();
-    entrada[0]=document.getElementById('cardname').value;
-    entrada[1]=document.getElementById('cardnumber').value;
-    entrada[2]=document.getElementById('cardxx').value;
-    entrada[3]=document.getElementById('cardcvv').value;
-
-    var error = new Array();
-    error[0] = "<span style='color: red'>Ingrese Nombre!!</span>";
-    error[1] = "<span style='color: red'>Ingrese Numero!!</span>";
-    error[2] = "<span style='color: red'>Ingrese la fecha</span>";
-    error[3] = "<span style='color: red'>Ingrese CVV</span>";
+    //Definiendo un arreglo nombre de errores
+    var arreglo = new Array();
+    arreglo[0]="errorNombre";
+    arreglo[1]="errorNumero";
+    arreglo[2]="errorXX";
+    arreglo[3]="errorCvv";
     
-
-    //Definiendo un ciclo forech
-    for(i in entrada){
-        var mensajeError = error[i]
-        var valorArreglo = arreglo[i]
+    
+    function validar(){
+        var entrada = new Array();
+        entrada[0]=document.getElementById('cardname').value;
+        entrada[1]=document.getElementById('cardnumber').value;
+        entrada[2]=document.getElementById('cardxx').value;
+        entrada[3]=document.getElementById('cardcvv').value;
+    
+        var error = new Array();
+        error[0] = "<span style='color: red'>Ingrese Nombre!!</span>";
+        error[1] = "<span style='color: red'>Ingrese Numero!!</span>";
+        error[2] = "<span style='color: red'>Ingrese la fecha</span>";
+        error[3] = "<span style='color: red'>Ingrese CVV</span>";
         
-        //Validando campo requerido
-        if(entrada[i]==""){
-            document.getElementById(valorArreglo).innerHTML = mensajeError;
+    
+        //Definiendo un ciclo forech
+        for(i in entrada){
+            var mensajeError = error[i]
+            var valorArreglo = arreglo[i]
+            
+            //Validando campo requerido
+            if(entrada[i]==""){
+                document.getElementById(valorArreglo).innerHTML = mensajeError;
+            }
+            else {
+                document.getElementById(valorArreglo).innerHTML =
+                    "Campo válido!!";
+            }
+    
         }
-        else {
-            document.getElementById(valorArreglo).innerHTML =
-                "Campo válido!!";
-        }
-
+    
     }
-
-}
-
-
-function validartodo(){
-    var contador = 0;
-    for(i=0; i<4; i++){
-        var valorArreglo = arreglo[i];
-        if( document.getElementById(valorArreglo).innerHTML == "Campo válido!!")
-        {
-            contador++;
+    
+    
+    function validartodo(){
+        var contador = 0;
+        for(i=0; i<4; i++){
+            var valorArreglo = arreglo[i];
+            if( document.getElementById(valorArreglo).innerHTML == "Campo válido!!")
+            {
+                contador++;
+            }
+        }
+        if(contador == 4){
+            document.getElementById('mensajefinal').innerHTML = "Producto registrado!!"
         }
     }
-    if(contador == 4){
-        document.getElementById('mensajefinal').innerHTML = "Producto registrado!!"
-    }
-}
+    
+    
+    </script>
 
-
-</script>
